@@ -4,6 +4,7 @@
 namespace app\controllers;
 
 use app\engine\Render;
+use app\interfaces\IRenderer;
 
 abstract class Controller
 {
@@ -13,9 +14,14 @@ abstract class Controller
     private $useLayouts = true;
     private $renderer;
 
-    public function __construct()
+    /**
+     * Controller constructor.
+     * @param $renderer
+     */
+
+    public function __construct(IRenderer $renderer)
     {
-        $this->renderer = new Render();
+        $this->renderer = $renderer;
     }
 
     public function runAction($action = null) {
