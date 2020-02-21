@@ -4,7 +4,15 @@ namespace app\engine;
 
 use app\traits\Tsingletone;
 
-class Db
+interface IDb {
+    public function queryAll($sql, $params);
+}
+
+interface ILog {
+    public function log();
+}
+
+class Db implements IDb //, ILog
 {
     private $config = [
         'driver' => 'mysql',
