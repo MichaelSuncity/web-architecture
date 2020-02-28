@@ -1,7 +1,8 @@
 <?php
 
 
-class Command
+abstract class Command
 {
-
+    public abstract  function execute();
+    public abstract  function unExecute();
 }

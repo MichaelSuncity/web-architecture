@@ -1,7 +1,7 @@
 <?php
 
 
-class PasteCommand
+class PasteTextCommand
 {
 
 }

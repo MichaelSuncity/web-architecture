@@ -1,22 +1,27 @@
 <?php
 
 
-class CopyCommand extends Command
+class CopyTextCommand extends Command
 {
 
-    public $operator;
-    public Text $text;
+    public $text;
+    public $start;
+    public $length;
 
-    public function __construct($operator, Text $text)
+    public function __construct($text, $start, $length)
     {
-        $this->operator = $operator;
         $this->text = $text;
+        $this->start = $start;
+        $this->length = $length;
     }
 
     public function execute()
     {
-        $this->text->operation($this->operator);
+        echo substr($this->text, $this->start, $this->length);
     }
+
+
+
     public function unExecute()
     {
         // TODO: Implement unExecute() method.
