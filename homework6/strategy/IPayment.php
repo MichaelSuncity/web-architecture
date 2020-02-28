@@ -1,7 +1,7 @@
 <?php
 
 
-class IPayment
+interface IPayment
 {
-
+    public function payment($total, $phone);
 }
