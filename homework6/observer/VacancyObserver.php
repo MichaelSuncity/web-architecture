@@ -14,11 +14,6 @@ class VacancyObserver implements SplObserver
         $this->experience = $experience;
     }
 
-    public function getName()
-    {
-        return $this->name;
-    }
-
     public function update(SplSubject $subject)
     {
         echo "Уважаемый {$this->name}! Появились новые вакансии!\n";

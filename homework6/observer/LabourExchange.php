@@ -4,18 +4,6 @@
 class LabourExchange implements SplSubject
 {
     private $observers;
-    public $vacancies;
-
-
-    public function getVacancies()
-    {
-        return $this->vacancies;
-    }
-
-    public function setVacancies($vacancies)
-    {
-        $this->vacancies = $vacancies;
-    }
 
     public function __construct()
     {
@@ -37,5 +25,10 @@ class LabourExchange implements SplSubject
         foreach ( $this->observers as $observer) {
             $observer->update( $this );
         }
+    }
+    public function newVacancies()
+    {
+        echo "Появились новые вакансии\n";
+        $this->notify();
     }
 }
